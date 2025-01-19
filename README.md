@@ -39,11 +39,11 @@ import { fixRemoveArrayElement } from "eslint-fix-utils";
 
 // ...
 
-export function report(node: ESTree.ArrayExpression) {
+export function report(index: number, node: ESTree.ArrayExpression) {
 	context.report({
-		fix: fixRemoveArrayElement(context, node, node.elements.length - 1),
+		fix: fixRemoveArrayElement(context, index, node.elements),
 		messageId,
-		node,
+		node: node.elements[index],
 	});
 }
 ```
@@ -57,11 +57,11 @@ import { fixRemoveObjectProperty } from "eslint-fix-utils";
 
 // ...
 
-export function report(node: ESTree.ArrayExpression) {
+export function report(index: number, node: ESTree.ObjectExpression) {
 	context.report({
-		fix: fixRemoveObjectProperty(context, node, node.elements.length - 1),
+		fix: fixRemoveObjectProperty(context, node.properties[index]),
 		messageId,
-		node,
+		node: node.properties[index],
 	});
 }
 ```
@@ -84,14 +84,14 @@ import { removeArrayElement } from "eslint-fix-utils";
 
 // ...
 
-export function report(node: ESTree.ArrayExpression) {
+export function report(index: number, node: ESTree.ArrayExpression) {
 	context.report({
 		fix(fixer) {
 			// Removes the last element of the array:
-			return removeArrayElement(context, fixer, node, node.elements.length - 1);
+			return removeArrayElement(context, fixer, index, node.elements);
 		},
 		messageId,
-		node,
+		node: node.elements[index],
 	});
 }
 ```
@@ -122,14 +122,14 @@ import { removeObjectProperty } from "eslint-fix-utils";
 
 // ...
 
-export function report(node: ESTree.ObjectExpression) {
+export function report(index: number, node: ESTree.ObjectExpression) {
 	context.report({
 		fix(fixer) {
 			// Removes the last property of the object:
-			return removeObjectProperty(context, fixer, node.properties.length - 1);
+			return removeObjectProperty(context, fixer, node.properties[index]);
 		},
 		messageId,
-		node,
+		node: node.properties[index],
 	});
 }
 ```

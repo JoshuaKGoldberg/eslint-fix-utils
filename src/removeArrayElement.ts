@@ -7,6 +7,19 @@ export type ArrayElementsOrParent =
 	| ESTree.ArrayExpression
 	| ESTree.ArrayExpression["elements"];
 
+/**
+ * Given an ArrayExpression or the list of elements an ArrayExpression has,
+ * the index or node within that array that you want to remove, and a rule fixer,
+ * this function yields removals for the node itself, as well as any trailing
+ * commas that are no longer necessary.
+ * @param context ESLint Rule Context
+ * @param fixer Rule fixer
+ * @param elementOrIndex The child expression, spread element, or a numeric
+ * index of the child
+ * @param parentOrElements The array expression node, or its `.elements` array
+ * @yields fixer removals for the node itself, as well as any trailing commas
+ * that are no longer necessary.
+ */
 export function* removeArrayElement(
 	context: Rule.RuleContext,
 	fixer: Rule.RuleFixer,
