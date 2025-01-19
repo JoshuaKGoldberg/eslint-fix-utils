@@ -40,6 +40,8 @@ export default tseslint.config(
 			},
 		},
 		rules: {
+			"n/no-missing-import": "off",
+
 			// Stylistic concerns that don't interfere with Prettier
 			"logical-assignment-operators": [
 				"error",
@@ -55,9 +57,6 @@ export default tseslint.config(
 	{
 		extends: [tseslint.configs.disableTypeChecked],
 		files: ["**/*.md/*.ts"],
-		rules: {
-			"n/no-missing-import": ["error", { allowModules: ["eslint-fix-utils"] }],
-		},
 	},
 	{
 		extends: [vitest.configs.recommended],

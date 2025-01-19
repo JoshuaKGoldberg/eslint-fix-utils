@@ -1,4 +1,4 @@
-<h1 align="center">Eslint Fix Utils</h1>
+<h1 align="center">ESLint Fix Utils</h1>
 
 <p align="center">
 	Utilities for ESLint rule fixers and suggestions.
@@ -8,7 +8,7 @@
 <p align="center">
 	<!-- prettier-ignore-start -->
 	<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-	<a href="#contributors" target="_blank"><img alt="👪 All Contributors: 1" src="https://img.shields.io/badge/%F0%9F%91%AA_all_contributors-1-21bb42.svg" /></a>
+	<a href="#contributors" target="_blank"><img alt="👪 All Contributors: 2" src="https://img.shields.io/badge/%F0%9F%91%AA_all_contributors-2-21bb42.svg" /></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 	<!-- prettier-ignore-end -->
 	<a href="https://github.com/JoshuaKGoldberg/eslint-fix-utils/blob/main/.github/CODE_OF_CONDUCT.md" target="_blank"><img alt="🤝 Code of Conduct: Kept" src="https://img.shields.io/badge/%F0%9F%A4%9D_code_of_conduct-kept-21bb42" /></a>
@@ -20,15 +20,130 @@
 
 ## Usage
 
+If you're working on an ESLint plugin, install this as a dependency:
+
 ```shell
 npm i eslint-fix-utils
 ```
 
-```ts
-import { greet } from "eslint-fix-utils";
+You'll then be able to use any of its exported utilities in your rules.
 
-greet("Hello, world! 💖");
+### Fixer APIs
+
+### `fixRemoveArrayElement`
+
+Version of [`removeArrayElement`](#removearrayelement) that can be passed directly as a `fix` property.
+
+```ts
+import { fixRemoveArrayElement } from "eslint-fix-utils";
+
+// ...
+
+export function report(node: ESTree.ArrayExpression) {
+	context.report({
+		fix: fixRemoveArrayElement(context, node, node.elements.length - 1),
+		messageId,
+		node,
+	});
+}
 ```
+
+### `fixRemoveObjectProperty`
+
+Version of [`removeObjectProperty`](#removeobjectproperty) that can be passed directly as a `fix` property.
+
+```ts
+import { fixRemoveObjectProperty } from "eslint-fix-utils";
+
+// ...
+
+export function report(node: ESTree.ArrayExpression) {
+	context.report({
+		fix: fixRemoveObjectProperty(context, node, node.elements.length - 1),
+		messageId,
+		node,
+	});
+}
+```
+
+### Full APIs
+
+#### `removeArrayElement`
+
+Removes an element from an array expression, along with any commas that are no longer necessary.
+
+Parameters:
+
+1. `context`
+2. `fixer`
+3. `elementOrIndex`: the child expression, spread element, or a numeric index of the child
+4. `parentOrElements`: the array expression node, or its `.elements` array
+
+```ts
+import { removeArrayElement } from "eslint-fix-utils";
+
+// ...
+
+export function report(node: ESTree.ArrayExpression) {
+	context.report({
+		fix(fixer) {
+			// Removes the last element of the array:
+			return removeArrayElement(context, fixer, node, node.elements.length - 1);
+		},
+		messageId,
+		node,
+	});
+}
+```
+
+```diff
+[
+ 	'a',
+-	'b',
+-	'c'
++	'b'
+]
+```
+
+Trailing commas are removed so that the fixed code will work regardless of whether the language and location allows them.
+
+#### `removeObjectProperty`
+
+Removes a property from an object expression, along with any commas that are no longer necessary.
+
+Parameters:
+
+1. `context`
+2. `fixer`
+3. `property`: the property node
+
+```ts
+import { removeObjectProperty } from "eslint-fix-utils";
+
+// ...
+
+export function report(node: ESTree.ObjectExpression) {
+	context.report({
+		fix(fixer) {
+			// Removes the last property of the object:
+			return removeObjectProperty(context, fixer, node.properties.length - 1);
+		},
+		messageId,
+		node,
+	});
+}
+```
+
+```diff
+{
+ 	a: 1,
+-	b: 2,
+-	c: 3,
++	b: 2
+}
+```
+
+Trailing commas are removed so that the fixed code will work regardless of whether the language and location allows them.
 
 ## Development
 
@@ -44,7 +159,8 @@ Thanks! 💖
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="http://www.joshuakgoldberg.com/"><img src="https://avatars.githubusercontent.com/u/3335181?v=4?s=100" width="100px;" alt="Josh Goldberg ✨"/><br /><sub><b>Josh Goldberg ✨</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-fix-utils/commits?author=JoshuaKGoldberg" title="Code">💻</a> <a href="#content-JoshuaKGoldberg" title="Content">🖋</a> <a href="#ideas-JoshuaKGoldberg" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-JoshuaKGoldberg" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-JoshuaKGoldberg" title="Maintenance">🚧</a> <a href="#projectManagement-JoshuaKGoldberg" title="Project Management">📆</a> <a href="#tool-JoshuaKGoldberg" title="Tools">🔧</a> <a href="https://github.com/JoshuaKGoldberg/eslint-fix-utils/commits?author=JoshuaKGoldberg" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.joshuakgoldberg.com/"><img src="https://avatars.githubusercontent.com/u/3335181?v=4?s=100" width="100px;" alt="Josh Goldberg ✨"/><br /><sub><b>Josh Goldberg ✨</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-fix-utils/commits?author=JoshuaKGoldberg" title="Code">💻</a> <a href="#content-JoshuaKGoldberg" title="Content">🖋</a> <a href="https://github.com/JoshuaKGoldberg/eslint-fix-utils/commits?author=JoshuaKGoldberg" title="Documentation">📖</a> <a href="#ideas-JoshuaKGoldberg" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-JoshuaKGoldberg" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-JoshuaKGoldberg" title="Maintenance">🚧</a> <a href="#projectManagement-JoshuaKGoldberg" title="Project Management">📆</a> <a href="https://github.com/JoshuaKGoldberg/eslint-fix-utils/commits?author=JoshuaKGoldberg" title="Tests">⚠️</a> <a href="#tool-JoshuaKGoldberg" title="Tools">🔧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/michaelfaith"><img src="https://avatars.githubusercontent.com/u/8071845?v=4?s=100" width="100px;" alt="michael faith"/><br /><sub><b>michael faith</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-fix-utils/commits?author=michaelfaith" title="Code">💻</a> <a href="#content-michaelfaith" title="Content">🖋</a> <a href="https://github.com/JoshuaKGoldberg/eslint-fix-utils/commits?author=michaelfaith" title="Documentation">📖</a> <a href="#ideas-michaelfaith" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-michaelfaith" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-michaelfaith" title="Maintenance">🚧</a> <a href="#projectManagement-michaelfaith" title="Project Management">📆</a> <a href="https://github.com/JoshuaKGoldberg/eslint-fix-utils/commits?author=michaelfaith" title="Tests">⚠️</a> <a href="#tool-michaelfaith" title="Tools">🔧</a></td>
     </tr>
   </tbody>
 </table>

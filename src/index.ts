@@ -1,2 +1,4 @@
-export * from "./greet.js";
-export * from "./types.js";
+export * from "./fixRemoveArrayElement.js";
+export * from "./fixRemoveObjectProperty.js";
+export * from "./removeArrayElement.js";
+export * from "./removeObjectProperty.js";
