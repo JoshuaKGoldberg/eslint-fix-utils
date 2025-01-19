@@ -21,7 +21,7 @@ importers:
         specifier: 2.0.2
         version: 2.0.2
       '@types/estree':
-        specifier: ^1.0.6
+        specifier: 1.0.6
         version: 1.0.6
       '@types/node':
         specifier: 22.10.2
