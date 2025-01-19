@@ -1,0 +1,29 @@
+{
+	"dictionaries": ["npm", "node", "typescript"],
+	"ignorePaths": [
+		".all-contributorsrc",
+		".github",
+		"CHANGELOG.md",
+		"coverage",
+		"lib",
+		"node_modules",
+		"pnpm-lock.yaml"
+	],
+	"words": [
+		"access",
+		"apexskier",
+		"automerge",
+		"description",
+		"directory",
+		"Eslint",
+		"eslint-fix-utils",
+		"joshuakgoldberg",
+		"markdownlintignore",
+		"public",
+		"repository",
+		"title",
+		"tseslint",
+		"usage",
+		"Utilities"
+	]
+}
