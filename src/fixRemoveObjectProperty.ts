@@ -1,9 +1,6 @@
 import { Rule } from "eslint";
 
-import {
-	ObjectProperty,
-	removeObjectProperty,
-} from "./removeObjectProperty.js";
+import { ObjectProperty, removeObjectProperty } from "./removeObjectProperty";
 
 export function fixRemoveObjectProperty(
 	context: Rule.RuleContext,

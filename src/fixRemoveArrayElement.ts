@@ -4,7 +4,7 @@ import {
 	ArrayElement,
 	ArrayElementsOrParent,
 	removeArrayElement,
-} from "./removeArrayElement.js";
+} from "./removeArrayElement";
 
 export function fixRemoveArrayElement(
 	context: Rule.RuleContext,
