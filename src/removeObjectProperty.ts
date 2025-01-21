@@ -3,6 +3,15 @@ import * as ESTree from "estree";
 
 export type ObjectProperty = ESTree.Property | ESTree.SpreadElement;
 
+/**
+ * Given an ObjectProperty, and a rule fixer, this function yields removals for
+ * the node itself, as well as any trailing commas that are no longer necessary.
+ * @param context ESLint Rule Context
+ * @param fixer Rule fixer
+ * @param property The property node
+ * @yields fixer removals for the node itself, as well as any trailing commas
+ * that are no longer necessary.
+ */
 export function* removeObjectProperty(
 	context: Rule.RuleContext,
 	fixer: Rule.RuleFixer,
