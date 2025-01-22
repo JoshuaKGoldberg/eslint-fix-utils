@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { greet } from "./greet.js";
+import { greet } from "./greet";
 
 const message = "Yay, testing!";
 

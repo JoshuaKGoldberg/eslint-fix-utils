@@ -22,7 +22,9 @@
 			"require": "./lib/index.cjs"
 		}
 	},
-	"main": "lib/index.js",
+	"main": "lib/index.cjs",
+	"module": "lib/index.js",
+	"types": "lib/index.d.ts",
 	"files": [
 		"LICENSE.md",
 		"README.md",
@@ -84,6 +86,7 @@
 		"@types/estree": ">=1",
 		"eslint": ">=8"
 	},
+	"packageManager": "pnpm@9.15.3",
 	"engines": {
 		"node": ">=18.3.0"
 	},

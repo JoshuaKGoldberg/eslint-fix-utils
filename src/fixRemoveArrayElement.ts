@@ -4,7 +4,7 @@ import {
 	ArrayElement,
 	ArrayElementsOrParent,
 	removeArrayElement,
-} from "./removeArrayElement.js";
+} from "./removeArrayElement";
 
 /**
  * Given an ArrayExpression or the list of elements an ArrayExpression has, and
