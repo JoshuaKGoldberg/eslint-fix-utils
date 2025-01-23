@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.2.0](https://github.com/JoshuaKGoldberg/eslint-fix-utils/compare/0.1.0...0.2.0) (2025-01-23)
+
+### Features
+
+- empty commit to trigger 0.2.0 ([1658b2d](https://github.com/JoshuaKGoldberg/eslint-fix-utils/commit/1658b2d849fe9f636f24f154831ad8eeecb5721c))
+
 # 0.1.0 (2025-01-19)
 
 ### Features
