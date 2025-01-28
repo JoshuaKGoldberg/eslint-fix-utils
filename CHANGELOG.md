@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.1](https://github.com/JoshuaKGoldberg/eslint-fix-utils/compare/0.2.0...0.2.1) (2025-01-28)
+
+### Bug Fixes
+
+- make `@types/estree` peer dependency optional ([#25](https://github.com/JoshuaKGoldberg/eslint-fix-utils/issues/25)) ([f6ddd9d](https://github.com/JoshuaKGoldberg/eslint-fix-utils/commit/f6ddd9d20de032992202d9287be3c7abee4f0d15)), closes [#24](https://github.com/JoshuaKGoldberg/eslint-fix-utils/issues/24)
+
 # [0.2.0](https://github.com/JoshuaKGoldberg/eslint-fix-utils/compare/0.1.0...0.2.0) (2025-01-23)
 
 ### Features
