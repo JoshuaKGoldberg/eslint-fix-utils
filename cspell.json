@@ -8,12 +8,5 @@
 		"lib",
 		"node_modules",
 		"pnpm-lock.yaml"
-	],
-	"words": [
-		"apexskier",
-		"automerge",
-		"joshuakgoldberg",
-		"markdownlintignore",
-		"tseslint"
 	]
 }
