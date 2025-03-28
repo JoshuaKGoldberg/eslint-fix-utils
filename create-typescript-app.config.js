@@ -9,6 +9,7 @@ import {
 	blockCodecov,
 	blockCTATransitions,
 	blockESLint,
+	blockKnip,
 	blockMain,
 	blockPackageJson,
 	blockTSup,
@@ -30,6 +31,9 @@ export default createConfig({
 						entries: { "n/no-missing-import": "off" },
 					},
 				],
+			}),
+			blockKnip({
+				ignoreDependencies: ["@types/estree"],
 			}),
 			blockPackageJson({
 				properties: {
