@@ -14,7 +14,9 @@
 				"infra",
 				"maintenance",
 				"projectManagement",
-				"tool"
+				"test",
+				"tool",
+				"bug"
 			]
 		},
 		{
