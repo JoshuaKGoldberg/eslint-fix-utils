@@ -8,7 +8,9 @@ runs:
     - run: npx create-typescript-app
       shell: bash
     - id: auto-commit-action
-      uses: stefanzweifel/git-auto-commit-action@e348103e9026cc0eee72ae06630dbe30c8bf7a79 # v5
+      uses: >-
+        stefanzweifel/git-auto-commit-action@e348103e9026cc0eee72ae06630dbe30c8bf7a79
+        # v5
       with:
         commit_author: The Friendly Bingo Bot <bot@create.bingo>
         commit_message: Check in changes from re-running npx create-typescript-app
