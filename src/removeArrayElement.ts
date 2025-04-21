@@ -25,7 +25,7 @@ export function* removeArrayElement(
 	fixer: Rule.RuleFixer,
 	elementOrIndex: ArrayElement | number,
 	parentOrElements: ArrayElementsOrParent,
-) {
+): Generator<Rule.Fix, void> {
 	const elements = Array.isArray(parentOrElements)
 		? parentOrElements
 		: parentOrElements.elements;

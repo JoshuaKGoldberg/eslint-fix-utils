@@ -16,7 +16,7 @@ export function* removeObjectProperty(
 	context: Rule.RuleContext,
 	fixer: Rule.RuleFixer,
 	property: ObjectProperty,
-) {
+): Generator<Rule.Fix, void> {
 	const tokenAfter = context.sourceCode.getTokenAfter(property);
 	const tokenBefore = context.sourceCode.getTokenBefore(property);
 
