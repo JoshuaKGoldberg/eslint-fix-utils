@@ -1,0 +1,39 @@
+import type { Rule } from "eslint";
+
+import { describe, expect, it, vi } from "vitest";
+
+import type { ObjectProperty } from "./removeObjectProperty";
+
+import { fixRemoveObjectProperty } from "./fixRemoveObjectProperty";
+import { removeObjectProperty } from "./removeObjectProperty";
+
+vi.mock("../src/removeObjectProperty", () => ({
+	removeObjectProperty: vi.fn(),
+}));
+
+describe("fixRemoveObjectProperty", () => {
+	it("should return a fixer function", () => {
+		const mockContext = {} as Rule.RuleContext;
+		const mockProperty = {} as ObjectProperty;
+
+		const fixerFunction = fixRemoveObjectProperty(mockContext, mockProperty);
+
+		expect(typeof fixerFunction).toBe("function");
+	});
+
+	it("should call removeObjectProperty with the correct arguments when the fixer function is invoked", () => {
+		const mockContext = {} as Rule.RuleContext;
+		const mockFixer = {} as Rule.RuleFixer;
+		const mockProperty = {} as ObjectProperty;
+
+		const fixerFunction = fixRemoveObjectProperty(mockContext, mockProperty);
+
+		fixerFunction(mockFixer);
+
+		expect(removeObjectProperty).toHaveBeenCalledWith(
+			mockContext,
+			mockFixer,
+			mockProperty,
+		);
+	});
+});
