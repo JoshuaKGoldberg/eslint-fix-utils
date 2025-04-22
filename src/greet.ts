@@ -1,6 +1,6 @@
 import { GreetOptions } from "./types";
 
-export function greet(options: GreetOptions | string) {
+export function greet(options: GreetOptions | string): void {
 	const {
 		logger = console.log.bind(console),
 		message,

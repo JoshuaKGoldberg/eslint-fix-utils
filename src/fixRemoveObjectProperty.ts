@@ -12,10 +12,10 @@ import { ObjectProperty, removeObjectProperty } from "./removeObjectProperty";
  * removes a property from an object expression, along with any commas that
  * are no longer necessary.
  */
-export function fixRemoveObjectProperty(
+export const fixRemoveObjectProperty = (
 	context: Rule.RuleContext,
 	property: ObjectProperty,
-) {
+): ((fixer: Rule.RuleFixer) => Generator<Rule.Fix, void>) => {
 	return (fixer: Rule.RuleFixer) =>
 		removeObjectProperty(context, fixer, property);
-}
+};

@@ -19,11 +19,11 @@ import {
  * removes an element from an array expression, along with any commas that are
  * no longer necessary.
  */
-export function fixRemoveArrayElement(
+export const fixRemoveArrayElement = (
 	context: Rule.RuleContext,
 	elementOrIndex: ArrayElement | number,
 	parentOrElements: ArrayElementsOrParent,
-) {
+): ((fixer: Rule.RuleFixer) => Generator<Rule.Fix, void>) => {
 	return (fixer: Rule.RuleFixer) =>
 		removeArrayElement(context, fixer, elementOrIndex, parentOrElements);
-}
+};
