@@ -1,8 +1,8 @@
-import { Rule } from "eslint";
+import type { Rule } from "eslint";
 
 import {
-	ArrayElement,
-	ArrayElementsOrParent,
+	type ArrayElement,
+	type ArrayElementsOrParent,
 	removeArrayElement,
 } from "./removeArrayElement";
 
