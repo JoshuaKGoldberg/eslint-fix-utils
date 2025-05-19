@@ -13,7 +13,8 @@ describe("removeObjectProperty", () => {
 				getTokenBefore: vi.fn().mockReturnValue({ value: "," }),
 			},
 		} as unknown as Rule.RuleContext;
-		const mockFixer = { remove: vi.fn() } as unknown as Rule.RuleFixer;
+		const remove = vi.fn();
+		const mockFixer = { remove } as unknown as Rule.RuleFixer;
 		const mockProperty = {
 			key: { name: "key" },
 			type: "Property",
@@ -23,8 +24,8 @@ describe("removeObjectProperty", () => {
 			...removeObjectProperty(mockContext, mockFixer, mockProperty),
 		];
 
-		expect(mockFixer.remove).toHaveBeenCalledWith(mockProperty);
-		expect(mockFixer.remove).toHaveBeenCalledWith({ value: "," }); // Trailing comma
+		expect(remove).toHaveBeenCalledWith(mockProperty);
+		expect(remove).toHaveBeenCalledWith({ value: "," }); // Trailing comma
 		expect(fixes).toHaveLength(2);
 	});
 
@@ -35,7 +36,8 @@ describe("removeObjectProperty", () => {
 				getTokenBefore: vi.fn().mockReturnValue({ value: "," }),
 			},
 		} as unknown as Rule.RuleContext;
-		const mockFixer = { remove: vi.fn() } as unknown as Rule.RuleFixer;
+		const remove = vi.fn();
+		const mockFixer = { remove } as unknown as Rule.RuleFixer;
 		const mockProperty = {
 			key: { name: "key" },
 			type: "Property",
@@ -45,8 +47,8 @@ describe("removeObjectProperty", () => {
 			...removeObjectProperty(mockContext, mockFixer, mockProperty),
 		];
 
-		expect(mockFixer.remove).toHaveBeenCalledWith(mockProperty);
-		expect(mockFixer.remove).toHaveBeenCalledWith({ value: "," }); // Preceding comma
+		expect(remove).toHaveBeenCalledWith(mockProperty);
+		expect(remove).toHaveBeenCalledWith({ value: "," }); // Preceding comma
 		expect(fixes).toHaveLength(2);
 	});
 
@@ -57,7 +59,8 @@ describe("removeObjectProperty", () => {
 				getTokenBefore: vi.fn().mockReturnValue(undefined),
 			},
 		} as unknown as Rule.RuleContext;
-		const mockFixer = { remove: vi.fn() } as unknown as Rule.RuleFixer;
+		const remove = vi.fn();
+		const mockFixer = { remove } as unknown as Rule.RuleFixer;
 		const mockProperty = {
 			key: { name: "key" },
 			type: "Property",
@@ -67,7 +70,7 @@ describe("removeObjectProperty", () => {
 			...removeObjectProperty(mockContext, mockFixer, mockProperty),
 		];
 
-		expect(mockFixer.remove).toHaveBeenCalledWith(mockProperty);
+		expect(remove).toHaveBeenCalledWith(mockProperty);
 		expect(fixes).toHaveLength(1);
 	});
 
@@ -78,7 +81,8 @@ describe("removeObjectProperty", () => {
 				getTokenBefore: vi.fn().mockReturnValue({ value: "," }),
 			},
 		} as unknown as Rule.RuleContext;
-		const mockFixer = { remove: vi.fn() } as unknown as Rule.RuleFixer;
+		const remove = vi.fn();
+		const mockFixer = { remove } as unknown as Rule.RuleFixer;
 		const mockProperty = {
 			argument: { name: "spread" },
 			type: "SpreadElement",
@@ -88,8 +92,8 @@ describe("removeObjectProperty", () => {
 			...removeObjectProperty(mockContext, mockFixer, mockProperty),
 		];
 
-		expect(mockFixer.remove).toHaveBeenCalledWith(mockProperty);
-		expect(mockFixer.remove).toHaveBeenCalledWith({ value: "," }); // Trailing comma
+		expect(remove).toHaveBeenCalledWith(mockProperty);
+		expect(remove).toHaveBeenCalledWith({ value: "," }); // Trailing comma
 		expect(fixes).toHaveLength(2);
 	});
 
@@ -100,7 +104,8 @@ describe("removeObjectProperty", () => {
 				getTokenBefore: vi.fn().mockReturnValue("."),
 			},
 		} as unknown as Rule.RuleContext;
-		const mockFixer = { remove: vi.fn() } as unknown as Rule.RuleFixer;
+		const remove = vi.fn();
+		const mockFixer = { remove } as unknown as Rule.RuleFixer;
 		const mockProperty = {
 			key: { name: "key" },
 			type: "Property",
@@ -110,7 +115,7 @@ describe("removeObjectProperty", () => {
 			...removeObjectProperty(mockContext, mockFixer, mockProperty),
 		];
 
-		expect(mockFixer.remove).toHaveBeenCalledWith(mockProperty);
+		expect(remove).toHaveBeenCalledWith(mockProperty);
 		expect(fixes).toHaveLength(1);
 	});
 });

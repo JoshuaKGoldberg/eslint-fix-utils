@@ -31,7 +31,8 @@ describe("removeArrayElement", () => {
 				getTokenBefore: vi.fn(),
 			},
 		} as unknown as Rule.RuleContext;
-		const mockFixer = { remove: vi.fn() } as unknown as Rule.RuleFixer;
+		const remove = vi.fn();
+		const mockFixer = { remove } as unknown as Rule.RuleFixer;
 		const mockElements: ArrayElementsOrParent = [];
 		const mockElement: ArrayElement = { type: "Literal", value: 42 };
 
@@ -47,7 +48,8 @@ describe("removeArrayElement", () => {
 				getTokenBefore: vi.fn().mockReturnValue({ value: "," }),
 			},
 		} as unknown as Rule.RuleContext;
-		const mockFixer = { remove: vi.fn() } as unknown as Rule.RuleFixer;
+		const remove = vi.fn();
+		const mockFixer = { remove } as unknown as Rule.RuleFixer;
 		const mockElements: ArrayElement[] = [
 			{ type: "Literal", value: 1 },
 			{ type: "Literal", value: 2 },
@@ -58,8 +60,8 @@ describe("removeArrayElement", () => {
 			...removeArrayElement(mockContext, mockFixer, mockIndex, mockElements),
 		];
 
-		expect(mockFixer.remove).toHaveBeenCalledWith(mockElements[1]);
-		expect(mockFixer.remove).toHaveBeenCalledWith({ value: "," }); // Trailing comma
+		expect(remove).toHaveBeenCalledWith(mockElements[1]);
+		expect(remove).toHaveBeenCalledWith({ value: "," }); // Trailing comma
 		expect(fixes).toHaveLength(2);
 	});
 
@@ -70,7 +72,8 @@ describe("removeArrayElement", () => {
 				getTokenBefore: vi.fn().mockReturnValue(undefined),
 			},
 		} as unknown as Rule.RuleContext;
-		const mockFixer = { remove: vi.fn() } as unknown as Rule.RuleFixer;
+		const remove = vi.fn();
+		const mockFixer = { remove } as unknown as Rule.RuleFixer;
 		const mockElements: ArrayElement[] = [
 			{ type: "Literal", value: 1 },
 			{ type: "Literal", value: 2 },
@@ -81,8 +84,8 @@ describe("removeArrayElement", () => {
 			...removeArrayElement(mockContext, mockFixer, mockIndex, mockElements),
 		];
 
-		expect(mockFixer.remove).toHaveBeenCalledWith(mockElements[1]);
-		expect(mockFixer.remove).toHaveBeenCalledWith({ value: "," }); // Trailing comma
+		expect(remove).toHaveBeenCalledWith(mockElements[1]);
+		expect(remove).toHaveBeenCalledWith({ value: "," }); // Trailing comma
 		expect(fixes).toHaveLength(2);
 	});
 
@@ -93,7 +96,8 @@ describe("removeArrayElement", () => {
 				getTokenBefore: vi.fn().mockReturnValue({ value: "," }),
 			},
 		} as unknown as Rule.RuleContext;
-		const mockFixer = { remove: vi.fn() } as unknown as Rule.RuleFixer;
+		const remove = vi.fn();
+		const mockFixer = { remove } as unknown as Rule.RuleFixer;
 		const mockElements: ArrayElement[] = [
 			{ type: "Literal", value: 1 },
 			{ type: "Literal", value: 2 },
@@ -104,8 +108,8 @@ describe("removeArrayElement", () => {
 			...removeArrayElement(mockContext, mockFixer, mockIndex, mockElements),
 		];
 
-		expect(mockFixer.remove).toHaveBeenCalledWith(mockElements[1]);
-		expect(mockFixer.remove).toHaveBeenCalledWith({ value: "," }); // Preceding comma
+		expect(remove).toHaveBeenCalledWith(mockElements[1]);
+		expect(remove).toHaveBeenCalledWith({ value: "," }); // Preceding comma
 		expect(fixes).toHaveLength(2);
 	});
 
@@ -116,7 +120,8 @@ describe("removeArrayElement", () => {
 				getTokenBefore: vi.fn().mockReturnValue(undefined),
 			},
 		} as unknown as Rule.RuleContext;
-		const mockFixer = { remove: vi.fn() } as unknown as Rule.RuleFixer;
+		const remove = vi.fn();
+		const mockFixer = { remove } as unknown as Rule.RuleFixer;
 		const mockElements: ArrayElement[] = [{ type: "Literal", value: 1 }];
 		const mockIndex = 0;
 
@@ -124,7 +129,7 @@ describe("removeArrayElement", () => {
 			...removeArrayElement(mockContext, mockFixer, mockIndex, mockElements),
 		];
 
-		expect(mockFixer.remove).toHaveBeenCalledWith(mockElements[0]);
+		expect(remove).toHaveBeenCalledWith(mockElements[0]);
 		expect(fixes).toHaveLength(1);
 	});
 
@@ -135,7 +140,8 @@ describe("removeArrayElement", () => {
 				getTokenBefore: vi.fn().mockReturnValue({ value: "," }),
 			},
 		} as unknown as Rule.RuleContext;
-		const mockFixer = { remove: vi.fn() } as unknown as Rule.RuleFixer;
+		const remove = vi.fn();
+		const mockFixer = { remove } as unknown as Rule.RuleFixer;
 		const mockArrayExpression: ESTree.ArrayExpression = {
 			elements: [
 				{ type: "Literal", value: 1 },
@@ -155,10 +161,8 @@ describe("removeArrayElement", () => {
 			),
 		];
 
-		expect(mockFixer.remove).toHaveBeenCalledWith(
-			mockArrayExpression.elements[1],
-		);
-		expect(mockFixer.remove).toHaveBeenCalledWith({ value: "," }); // Trailing comma
+		expect(remove).toHaveBeenCalledWith(mockArrayExpression.elements[1]);
+		expect(remove).toHaveBeenCalledWith({ value: "," }); // Trailing comma
 		expect(fixes).toHaveLength(2);
 	});
 
@@ -169,7 +173,8 @@ describe("removeArrayElement", () => {
 				getTokenBefore: vi.fn().mockReturnValue({ value: "." }),
 			},
 		} as unknown as Rule.RuleContext;
-		const mockFixer = { remove: vi.fn() } as unknown as Rule.RuleFixer;
+		const remove = vi.fn();
+		const mockFixer = { remove } as unknown as Rule.RuleFixer;
 		const mockArrayExpression: ESTree.ArrayExpression = {
 			elements: [
 				{ type: "Literal", value: 1 },
@@ -188,9 +193,7 @@ describe("removeArrayElement", () => {
 			),
 		];
 
-		expect(mockFixer.remove).toHaveBeenCalledWith(
-			mockArrayExpression.elements[1],
-		);
+		expect(remove).toHaveBeenCalledWith(mockArrayExpression.elements[1]);
 		expect(fixes).toHaveLength(1);
 	});
 });

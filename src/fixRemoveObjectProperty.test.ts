@@ -12,15 +12,6 @@ vi.mock("../src/removeObjectProperty", () => ({
 }));
 
 describe("fixRemoveObjectProperty", () => {
-	it("should return a fixer function", () => {
-		const mockContext = {} as Rule.RuleContext;
-		const mockProperty = {} as ObjectProperty;
-
-		const fixerFunction = fixRemoveObjectProperty(mockContext, mockProperty);
-
-		expect(typeof fixerFunction).toBe("function");
-	});
-
 	it("should call removeObjectProperty with the correct arguments when the fixer function is invoked", () => {
 		const mockContext = {} as Rule.RuleContext;
 		const mockFixer = {} as Rule.RuleFixer;
