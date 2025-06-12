@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.4.0](https://github.com/JoshuaKGoldberg/eslint-fix-utils/compare/0.3.0...0.4.0) (2025-06-12)
+
+### Features
+
+- bundle esm-only ([#170](https://github.com/JoshuaKGoldberg/eslint-fix-utils/issues/170)) ([62e4938](https://github.com/JoshuaKGoldberg/eslint-fix-utils/commit/62e4938aa6e67db31611e59b6fe19692069a56de)), closes [#167](https://github.com/JoshuaKGoldberg/eslint-fix-utils/issues/167)
+
 # [0.3.0](https://github.com/JoshuaKGoldberg/eslint-fix-utils/compare/0.2.1...0.3.0) (2025-06-11)
 
 ### Bug Fixes
