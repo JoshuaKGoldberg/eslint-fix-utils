@@ -1,9 +1,9 @@
-import { Rule } from "eslint";
+import type { Rule } from "eslint";
 
 import {
-	ObjectProperty,
+	type ObjectProperty,
 	removeObjectProperty,
-} from "./removeObjectProperty.js";
+} from "./removeObjectProperty";
 
 /**
  * Given an ObjectProperty, this function returns a fixer function that you can
@@ -15,10 +15,10 @@ import {
  * removes a property from an object expression, along with any commas that
  * are no longer necessary.
  */
-export function fixRemoveObjectProperty(
+export const fixRemoveObjectProperty = (
 	context: Rule.RuleContext,
 	property: ObjectProperty,
-) {
+): ((fixer: Rule.RuleFixer) => Generator<Rule.Fix, void>) => {
 	return (fixer: Rule.RuleFixer) =>
 		removeObjectProperty(context, fixer, property);
-}
+};

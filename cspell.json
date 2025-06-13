@@ -1,5 +1,6 @@
 {
 	"dictionaries": ["npm", "node", "typescript"],
+	"words": ["tsdown"],
 	"ignorePaths": [
 		".all-contributorsrc",
 		".github",

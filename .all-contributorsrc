@@ -35,14 +35,19 @@
 				"test",
 				"tool"
 			]
+		},
+		{
+			"login": "azat-io",
+			"name": "Azat S.",
+			"avatar_url": "https://avatars.githubusercontent.com/u/5698350?v=4",
+			"profile": "http://azat.io",
+			"contributions": ["ideas"]
 		}
 	],
 	"contributorsSortAlphabetically": true,
 	"projectName": "eslint-fix-utils",
 	"projectOwner": "JoshuaKGoldberg",
 	"repoType": "github",
-	"commitConvention": "angular",
-	"files": ["README.md"],
-	"commitType": "docs",
-	"contributorsPerLine": 7
+	"commitConvention": "angular"
 }
+

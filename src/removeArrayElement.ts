@@ -1,5 +1,5 @@
-import { Rule } from "eslint";
-import * as ESTree from "estree";
+import type { Rule } from "eslint";
+import type * as ESTree from "estree";
 
 export type ArrayElement = ESTree.Expression | ESTree.SpreadElement;
 
@@ -25,7 +25,7 @@ export function* removeArrayElement(
 	fixer: Rule.RuleFixer,
 	elementOrIndex: ArrayElement | number,
 	parentOrElements: ArrayElementsOrParent,
-) {
+): Generator<Rule.Fix, void> {
 	const elements = Array.isArray(parentOrElements)
 		? parentOrElements
 		: parentOrElements.elements;
