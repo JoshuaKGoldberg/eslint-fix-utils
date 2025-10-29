@@ -87,8 +87,8 @@ importers:
         specifier: 3.6.0
         version: 3.6.0
       prettier-plugin-curly:
-        specifier: 0.3.1
-        version: 0.3.1(prettier@3.6.0)
+        specifier: 0.4.0
+        version: 0.4.0(prettier@3.6.0)
       prettier-plugin-packagejson:
         specifier: 2.5.10
         version: 2.5.10(prettier@3.6.0)
@@ -143,14 +143,6 @@ packages:
     resolution: {integrity: sha512-yZbBqeM6TkpP9du/I2pUZnJsRMGGvOuIrhjzC1AwHwW+6he4mni6Bp/m8ijn0iOuZuPI2BfkCoSRunpyjnrQKg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
-
-  '@babel/template@7.25.9':
-    resolution: {integrity: sha512-9DGttpmPvIxBb/2uwpVo3dqJ+O6RooAFOS+lB+xDqoE2PVCE8nfoHMdZLpfCQRLwvohzXISPZcgxt80xLfsuwg==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/traverse@7.26.5':
-    resolution: {integrity: sha512-rkOSPOw+AXbgtwUga3U4u8RpoK9FEFWBNAlTpcnkLFjL5CT+oyHNuUUC/xx6XefEJ16r38r8Bc/lfp6rYuHeJQ==}
-    engines: {node: '>=6.9.0'}
 
   '@babel/types@7.28.4':
     resolution: {integrity: sha512-bkFqkLhh3pMBUQQkpVgWDWq/lqzc2678eUyDlTBhRqhCHFguYYGM0Efga7tYk4TogG/3x0EEl66/OQ+WGbWB/Q==}
@@ -2453,10 +2445,6 @@ packages:
     resolution: {integrity: sha512-wHTUcDUoZ1H5/0iVqEudYW4/kAlN5cZ3j/bXn0Dpbizl9iaUVeWSHqiOjsgk6OW2bkLclbBjzewBz6weQ1zA2Q==}
     engines: {node: '>=18'}
 
-  globals@11.12.0:
-    resolution: {integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==}
-    engines: {node: '>=4'}
-
   globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
     engines: {node: '>=18'}
@@ -3463,8 +3451,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier-plugin-curly@0.3.1:
-    resolution: {integrity: sha512-GU3JJ4DB+j2gNA+8SxiyuAOuqalFu+JrX9JMNChTEwvgLCs+XXu2WJ1NbP1uK57Cbz04E2OhrkDpQFLMH5MsXg==}
+  prettier-plugin-curly@0.4.0:
+    resolution: {integrity: sha512-URhXSCdeYs+hWFyFS5NDrRBarFU5RV7X9C00LuUKmjFDqD2wxJJWZU+wmkgN50jyn97TWgqI2XrE6rX2AdGgZg==}
     engines: {node: '>=18'}
     peerDependencies:
       prettier: ^2 || ^3
@@ -4256,24 +4244,6 @@ snapshots:
   '@babel/parser@7.28.4':
     dependencies:
       '@babel/types': 7.28.4
-
-  '@babel/template@7.25.9':
-    dependencies:
-      '@babel/code-frame': 7.26.2
-      '@babel/parser': 7.28.4
-      '@babel/types': 7.28.4
-
-  '@babel/traverse@7.26.5':
-    dependencies:
-      '@babel/code-frame': 7.26.2
-      '@babel/generator': 7.28.3
-      '@babel/parser': 7.28.4
-      '@babel/template': 7.25.9
-      '@babel/types': 7.28.4
-      debug: 4.4.3
-      globals: 11.12.0
-    transitivePeerDependencies:
-      - supports-color
 
   '@babel/types@7.28.4':
     dependencies:
@@ -6759,8 +6729,6 @@ snapshots:
     dependencies:
       ini: 4.1.1
 
-  globals@11.12.0: {}
-
   globals@14.0.0: {}
 
   globals@15.14.0: {}
@@ -7874,14 +7842,9 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-curly@0.3.1(prettier@3.6.0):
+  prettier-plugin-curly@0.4.0(prettier@3.6.0):
     dependencies:
-      '@babel/generator': 7.28.3
-      '@babel/parser': 7.28.4
-      '@babel/traverse': 7.26.5
       prettier: 3.6.0
-    transitivePeerDependencies:
-      - supports-color
 
   prettier-plugin-packagejson@2.5.10(prettier@3.6.0):
     dependencies:
