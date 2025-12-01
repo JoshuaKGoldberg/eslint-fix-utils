@@ -31,11 +31,10 @@
 		"lint": "eslint . --max-warnings 0",
 		"lint:knip": "knip",
 		"lint:md": "markdownlint \"**/*.md\" \".github/**/*.md\" --rules sentences-per-line",
-		"lint:packages": "pnpm dedupe --check",
 		"lint:spelling": "cspell \"**\" \".github/**/*\"",
 		"prepare": "husky",
 		"test": "vitest",
-		"tsc": "tsc"
+		"typecheck": "tsc"
 	},
 	"lint-staged": {
 		"*": "prettier --ignore-unknown --write"
