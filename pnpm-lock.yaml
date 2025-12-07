@@ -80,6 +80,9 @@ importers:
       markdownlint-cli:
         specifier: 0.46.0
         version: 0.46.0
+      markdownlint-sentences-per-line:
+        specifier: 0.1.1
+        version: 0.1.1(markdownlint@0.40.0)
       prettier:
         specifier: 3.7.4
         version: 3.7.4
@@ -95,9 +98,6 @@ importers:
       release-it:
         specifier: 19.0.1
         version: 19.0.1(@types/node@24.10.0)(magicast@0.3.5)
-      sentences-per-line:
-        specifier: 0.4.0
-        version: 0.4.0
       tsdown:
         specifier: 0.17.0
         version: 0.17.0(oxc-resolver@11.15.0)(typescript@5.9.2)
@@ -136,19 +136,10 @@ packages:
     resolution: {integrity: sha512-qSs4ifwzKJSV39ucNjsvc6WVHs6b7S03sOh2OcHF9UHfVPqWWALUsNUVzhSBiItjRZoLHx7nIarVjqKVusUZ1Q==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/parser@7.28.4':
-    resolution: {integrity: sha512-yZbBqeM6TkpP9du/I2pUZnJsRMGGvOuIrhjzC1AwHwW+6he4mni6Bp/m8ijn0iOuZuPI2BfkCoSRunpyjnrQKg==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-
   '@babel/parser@7.28.5':
     resolution: {integrity: sha512-KKBU1VGYR7ORr3At5HAtUQ+TV3SzRCXmA/8OdDZiLDBIZxVyzXuztPjfLd3BV1PRAQGCMWWSHYhL0F8d5uHBDQ==}
     engines: {node: '>=6.0.0'}
     hasBin: true
-
-  '@babel/types@7.28.4':
-    resolution: {integrity: sha512-bkFqkLhh3pMBUQQkpVgWDWq/lqzc2678eUyDlTBhRqhCHFguYYGM0Efga7tYk4TogG/3x0EEl66/OQ+WGbWB/Q==}
-    engines: {node: '>=6.9.0'}
 
   '@babel/types@7.28.5':
     resolution: {integrity: sha512-qQ5m48eI/MFLQ5PxQj4PFaprjyCTLI37ElWMmNs0K8Lk3dVeOdNpB3ks8jc7yM5CDmVC73eMVk/trk3fgmrUpA==}
@@ -2610,6 +2601,15 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
+  markdownlint-rule-helpers@0.30.0:
+    resolution: {integrity: sha512-bQr0l6MGl5ia6PmkZpIP7qETSw3c/+ZXsHpACVO0SR/PaC5+VT3DFImR45G/EGGOzLwqZGussgx91Mh3cttyJw==}
+    engines: {node: '>=18'}
+
+  markdownlint-sentences-per-line@0.1.1:
+    resolution: {integrity: sha512-64IDuRF/j5ArWvpTHPrxsN6b7yc/kgEznRaP1bTC1ehBzzE1alUxWvT1L2oy+xasYfSTbq0GBNVVeYQx08Qmjw==}
+    peerDependencies:
+      markdownlint: ^0.37.0
+
   markdownlint@0.39.0:
     resolution: {integrity: sha512-Xt/oY7bAiHwukL1iru2np5LIkhwD19Y7frlsiDILK62v3jucXCD6JXlZlwMG12HZOR+roHIVuJZrfCkOhp6k3g==}
     engines: {node: '>=20'}
@@ -3615,20 +3615,9 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.28.5': {}
 
-  '@babel/parser@7.28.4':
-    dependencies:
-      '@babel/types': 7.28.4
-    optional: true
-
   '@babel/parser@7.28.5':
     dependencies:
       '@babel/types': 7.28.5
-
-  '@babel/types@7.28.4':
-    dependencies:
-      '@babel/helper-string-parser': 7.27.1
-      '@babel/helper-validator-identifier': 7.27.1
-    optional: true
 
   '@babel/types@7.28.5':
     dependencies:
@@ -5977,8 +5966,8 @@ snapshots:
 
   magicast@0.3.5:
     dependencies:
-      '@babel/parser': 7.28.4
-      '@babel/types': 7.28.4
+      '@babel/parser': 7.28.5
+      '@babel/types': 7.28.5
       source-map-js: 1.2.1
     optional: true
 
@@ -6017,6 +6006,14 @@ snapshots:
       tinyglobby: 0.2.15
     transitivePeerDependencies:
       - supports-color
+
+  markdownlint-rule-helpers@0.30.0: {}
+
+  markdownlint-sentences-per-line@0.1.1(markdownlint@0.40.0):
+    dependencies:
+      markdownlint: 0.40.0
+      markdownlint-rule-helpers: 0.30.0
+      sentences-per-line: 0.4.0
 
   markdownlint@0.39.0:
     dependencies:
