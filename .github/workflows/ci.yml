@@ -6,7 +6,7 @@ jobs:
       - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
       - uses: ./.github/actions/prepare
       - run: pnpm build
-      - run: node lib/index.js
+      - run: node lib/index.mjs
   lint:
     name: Lint
     runs-on: ubuntu-latest

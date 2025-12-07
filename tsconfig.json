@@ -9,7 +9,8 @@
 		"skipLibCheck": true,
 		"strict": true,
 		"target": "ES2022",
-		"isolatedDeclarations": true
+		"isolatedDeclarations": true,
+		"types": ["estree"]
 	},
 	"include": ["src"]
 }
