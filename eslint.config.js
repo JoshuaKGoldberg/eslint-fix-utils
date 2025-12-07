@@ -82,4 +82,10 @@ export default defineConfig(
 			],
 		},
 	},
+	{
+		files: ["./eslint.config.js", "./**/*.test.*"],
+		rules: {
+			"n/no-unsupported-features/node-builtins": "off",
+		},
+	},
 );
