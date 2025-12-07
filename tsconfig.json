@@ -10,7 +10,7 @@
 		"strict": true,
 		"target": "ES2022",
 		"isolatedDeclarations": true,
-		"types": ["estree"]
+		"types": ["estree", "node"]
 	},
 	"include": ["src"]
 }
