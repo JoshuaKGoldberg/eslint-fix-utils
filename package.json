@@ -11,6 +11,7 @@
 		"name": "Josh Goldberg ✨",
 		"email": "npm@joshuakgoldberg.com"
 	},
+	"sideEffects": false,
 	"type": "module",
 	"exports": {
 		".": {
@@ -43,7 +44,6 @@
 		"@eslint-community/eslint-plugin-eslint-comments": "4.5.0",
 		"@eslint/js": "9.39.0",
 		"@release-it/conventional-changelog": "10.0.0",
-		"@types/eslint-plugin-markdown": "2.0.2",
 		"@types/estree": "1.0.6",
 		"@types/node": "24.10.0",
 		"@vitest/coverage-v8": "4.0.15",
@@ -53,7 +53,6 @@
 		"eslint": "9.39.0",
 		"eslint-plugin-jsdoc": "61.5.0",
 		"eslint-plugin-jsonc": "2.21.0",
-		"eslint-plugin-markdown": "5.1.0",
 		"eslint-plugin-n": "17.23.1",
 		"eslint-plugin-package-json": "0.85.0",
 		"eslint-plugin-perfectionist": "4.15.0",
