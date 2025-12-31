@@ -1,17 +1,3 @@
-jobs:
-  compliance:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: mtfoley/pr-compliance-action@main
-        with:
-          body-auto-close: false
-          ignore-authors: |-
-            allcontributors
-            allcontributors[bot]
-            renovate
-            renovate[bot]
-          ignore-team-members: false
-
 name: Compliance
 
 on:
@@ -26,3 +12,17 @@ on:
 
 permissions:
   pull-requests: write
+
+jobs:
+  compliance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mtfoley/pr-compliance-action@main
+        with:
+          body-auto-close: false
+          ignore-authors: |-
+            allcontributors
+            allcontributors[bot]
+            renovate
+            renovate[bot]
+          ignore-team-members: false
