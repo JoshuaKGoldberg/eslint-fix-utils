@@ -35,7 +35,7 @@
 		"lint:spelling": "cspell \"**\" \".github/**/*\"",
 		"prepare": "husky",
 		"test": "vitest",
-		"typecheck": "tsc"
+		"type-check": "tsc"
 	},
 	"lint-staged": {
 		"*": "prettier --ignore-unknown --write"
@@ -43,7 +43,6 @@
 	"devDependencies": {
 		"@eslint-community/eslint-plugin-eslint-comments": "4.5.0",
 		"@eslint/js": "9.39.0",
-		"@release-it/conventional-changelog": "10.0.0",
 		"@types/estree": "1.0.6",
 		"@types/node": "24.10.0",
 		"@vitest/coverage-v8": "4.0.15",
@@ -68,7 +67,6 @@
 		"prettier-plugin-curly": "0.4.0",
 		"prettier-plugin-packagejson": "2.5.10",
 		"prettier-plugin-sh": "0.18.0",
-		"release-it": "19.2.0",
 		"tsdown": "0.18.0",
 		"typescript": "5.9.2",
 		"typescript-eslint": "8.50.0",
