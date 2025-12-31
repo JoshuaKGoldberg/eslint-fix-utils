@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: 📦 Build
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
@@ -16,42 +16,42 @@ jobs:
       - run: pnpm build
       - run: node lib/index.mjs
   lint:
-    name: 🔎 Lint
+    name: Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
       - uses: ./.github/actions/prepare
       - run: pnpm lint
   lint_knip:
-    name: 🔎 Lint Knip
+    name: Lint Knip
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
       - uses: ./.github/actions/prepare
       - run: pnpm lint:knip
   lint_markdown:
-    name: 🔎 Lint Markdown
+    name: Lint Markdown
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
       - uses: ./.github/actions/prepare
       - run: pnpm lint:md
   lint_spelling:
-    name: 🔎 Lint Spelling
+    name: Lint Spelling
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
       - uses: ./.github/actions/prepare
       - run: pnpm lint:spelling
   prettier:
-    name: 💅 Prettier
+    name: Prettier
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
       - uses: ./.github/actions/prepare
       - run: pnpm format --list-different
   test:
-    name: 🧪 Test
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
@@ -62,7 +62,7 @@ jobs:
         if: always()
         uses: codecov/codecov-action@v3
   type_check:
-    name: 🔎 Type Check
+    name: Type Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
