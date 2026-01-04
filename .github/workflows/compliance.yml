@@ -23,6 +23,8 @@ jobs:
           ignore-authors: |-
             allcontributors
             allcontributors[bot]
+            github-actions
+            github-actions[bot]
             renovate
             renovate[bot]
           ignore-team-members: false
