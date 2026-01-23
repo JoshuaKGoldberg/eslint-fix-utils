@@ -71,9 +71,6 @@ importers:
       markdownlint-cli:
         specifier: 0.47.0
         version: 0.47.0
-      markdownlint-sentences-per-line:
-        specifier: 0.1.1
-        version: 0.1.1(markdownlint@0.40.0)
       prettier:
         specifier: 3.8.0
         version: 3.8.0
@@ -2121,15 +2118,6 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  markdownlint-rule-helpers@0.30.0:
-    resolution: {integrity: sha512-bQr0l6MGl5ia6PmkZpIP7qETSw3c/+ZXsHpACVO0SR/PaC5+VT3DFImR45G/EGGOzLwqZGussgx91Mh3cttyJw==}
-    engines: {node: '>=18'}
-
-  markdownlint-sentences-per-line@0.1.1:
-    resolution: {integrity: sha512-64IDuRF/j5ArWvpTHPrxsN6b7yc/kgEznRaP1bTC1ehBzzE1alUxWvT1L2oy+xasYfSTbq0GBNVVeYQx08Qmjw==}
-    peerDependencies:
-      markdownlint: ^0.37.0
-
   markdownlint@0.40.0:
     resolution: {integrity: sha512-UKybllYNheWac61Ia7T6fzuQNDZimFIpCg2w6hHjgV1Qu0w1TV0LlSgryUGzM0bkKQCBhy2FDhEELB73Kb0kAg==}
     engines: {node: '>=20'}
@@ -2461,10 +2449,6 @@ packages:
     resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
     engines: {node: '>=10'}
     hasBin: true
-
-  sentences-per-line@0.4.0:
-    resolution: {integrity: sha512-KHlNwB0prYEmhs6yxPPrZZmq0O+tauB04lMY7vTirbFHSwaZmffsShCRH4dNThbhVQ1kVfpD+Omb8EOzKv7XcQ==}
-    engines: {node: '>=22.14.0'}
 
   sh-syntax@0.5.8:
     resolution: {integrity: sha512-JfVoxf4FxQI5qpsPbkHhZo+n6N9YMJobyl4oGEUBb/31oQYlgTjkXQD8PBiafS2UbWoxrTO0Z5PJUBXEPAG1Zw==}
@@ -4708,14 +4692,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  markdownlint-rule-helpers@0.30.0: {}
-
-  markdownlint-sentences-per-line@0.1.1(markdownlint@0.40.0):
-    dependencies:
-      markdownlint: 0.40.0
-      markdownlint-rule-helpers: 0.30.0
-      sentences-per-line: 0.4.0
-
   markdownlint@0.40.0:
     dependencies:
       micromark: 4.0.2
@@ -5191,8 +5167,6 @@ snapshots:
       regexp-ast-analysis: 0.7.1
 
   semver@7.7.3: {}
-
-  sentences-per-line@0.4.0: {}
 
   sh-syntax@0.5.8:
     dependencies:
