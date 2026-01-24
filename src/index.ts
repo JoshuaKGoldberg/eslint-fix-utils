@@ -1,4 +1,5 @@
 export { addObjectProperty } from "./addObjectProperty";
+export { fixAddObjectProperty } from "./fixAddObjectProperty";
 export { fixRemoveArrayElement } from "./fixRemoveArrayElement";
 export { fixRemoveObjectProperty } from "./fixRemoveObjectProperty";
 export {
