@@ -23,12 +23,34 @@
 If you're working on an ESLint plugin, install this as a dependency:
 
 ```shell
-npm i eslint-fix-utils
+pnpm add eslint-fix-utils
 ```
 
 You'll then be able to use any of its exported utilities in your rules.
 
 ### Fixer APIs
+
+### `fixAddObjectProperty`
+
+Version of [`addObjectProperty`](#addobjectproperty) that can be passed directly as a `fix` property.
+
+```ts
+import { fixAddObjectProperty } from "eslint-fix-utils";
+
+// ...
+
+export function report(
+	node: ESTree.ObjectExpression,
+	propertyKey: string,
+	propertyValue: string,
+) {
+	context.report({
+		fix: fixAddObjectProperty(context, node, propertyKey, propertyValue),
+		messageId,
+		node,
+	});
+}
+```
 
 ### `fixRemoveArrayElement`
 
@@ -67,6 +89,46 @@ export function report(index: number, node: ESTree.ObjectExpression) {
 ```
 
 ### Full APIs
+
+#### `addObjectProperty`
+
+Adds a new property to an object expression, along with any necessary commas.
+
+Parameters:
+
+1. `context: Rule.Context`
+2. `fixer: Rule.RuleFixer`
+3. `objectExpression: ESTree.ObjectExpression`: the object node
+4. `propertyKey: string`: the value for the new property's key
+5. `propertyValue: unknown`: the value for the new property's value
+
+```ts
+import { addObjectProperty } from "eslint-fix-utils";
+
+// ...
+
+export function report(index: number, node: ESTree.ObjectExpression) {
+	context.report({
+		fix: (fixer) {
+			// Adds a new property to the end of an Object:
+			return addObjectProperty(context, fixer, node, "type", "module");
+		},
+		messageId,
+		node,
+	});
+}
+```
+
+```diff
+{
+ 	name: "my-package",
+-	version: "1.2.3"
++	version: "1.2.3",
++ type: "module"
+}
+```
+
+Trailing commas are omitted so that the fixed code will work regardless of whether the language allows them.
 
 #### `removeArrayElement`
 
