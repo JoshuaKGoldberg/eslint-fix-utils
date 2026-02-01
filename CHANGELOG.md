@@ -16,6 +16,13 @@
 
 - remove support for node 18 ([#169](https://github.com/JoshuaKGoldberg/eslint-fix-utils/issues/169)) ([1b076be](https://github.com/JoshuaKGoldberg/eslint-fix-utils/commit/1b076be4533fc4e91e6c7af430ea2c597eb6d87b)), closes [#166](https://github.com/JoshuaKGoldberg/eslint-fix-utils/issues/166)
 
+## [0.4.1](https://github.com/JoshuaKGoldberg/eslint-fix-utils/compare/0.4.0...v0.4.1) (2026-02-01)
+
+
+### Features
+
+* add functions for adding a new property to an object ([#399](https://github.com/JoshuaKGoldberg/eslint-fix-utils/issues/399)) ([47daa1b](https://github.com/JoshuaKGoldberg/eslint-fix-utils/commit/47daa1be7da85f7939573057c6a649aa35cfdd77))
+
 ## [0.2.1](https://github.com/JoshuaKGoldberg/eslint-fix-utils/compare/0.2.0...0.2.1) (2025-01-28)
 
 ### Bug Fixes
