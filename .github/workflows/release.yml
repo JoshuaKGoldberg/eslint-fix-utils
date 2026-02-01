@@ -10,28 +10,39 @@ concurrency:
 
 jobs:
   release_please:
+    name: Manage Release PR
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
-      id-token: write # Required for OIDC
     outputs:
       releases_created: ${{ steps.release.outputs.releases_created }}
     steps:
       - uses: googleapis/release-please-action@16a9c90856f42705d54a6fda1823352bdc62cf38 # v4.4.0
         id: release
+        with:
+          config-file: .github/release-please/release-please-config.json
+          manifest-file: .github/release-please/release-please-manifest.json
+
+  publish:
+    name: Publish Package
+    if: ${{ needs.release_please.outputs.releases_created == 'true' }}
+    needs: release_please
+    permissions:
+      contents: read
+      id-token: write # Required for OIDC
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-        if: ${{ steps.release.outputs.release_created }}
       - uses: ./.github/actions/prepare
-        if: ${{ steps.release.outputs.release_created }}
-      - run: |
+      - name: Build and Publish
+        run: |
           pnpm build
           pnpm publish
-        if: ${{ steps.release.outputs.release_created }}
 
   post_release:
-    needs: release_please
-    if: ${{ needs.release_please.outputs.releases_created == 'true' }}
+    name: Post Release Comments
+    needs: publish
     runs-on: ubuntu-latest
     permissions:
       issues: write
