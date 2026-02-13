@@ -63,9 +63,16 @@ jobs:
         if: always()
         uses: codecov/codecov-action@v3
   type_check:
-    name: Type Check
+    name: Type Check (ESLint ${{ matrix.eslint-version }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        eslint-version:
+          - 9
+          - 10
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: ./.github/actions/prepare
+      - run: pnpm install -D eslint@${{ matrix.eslint-version }}
       - run: pnpm type-check
