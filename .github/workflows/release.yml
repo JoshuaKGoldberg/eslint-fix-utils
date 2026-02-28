@@ -60,7 +60,7 @@ jobs:
 
             The release is available on:
 
-            * [GitHub releases](https://github.com/JoshuaKGoldberg/eslint-fix-utils/releases/tag/{release_tag})
+            * [GitHub releases](https://github.com/michaelfaith/eslint-fix-utils/releases/tag/{release_tag})
             * [npm package (@latest dist-tag)](https://www.npmjs.com/package/eslint-fix-utils/v/${{ env.npm_version }})
 
             Cheers! 📦🚀
