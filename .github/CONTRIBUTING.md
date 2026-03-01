@@ -42,7 +42,7 @@ Be sure to fill out the pull request template's requested information -- otherwi
 PRs are also expected to have a title that adheres to [conventional commits](https://www.conventionalcommits.org/en/v1.0.0).
 Only PR titles need to be in that format, not individual commits.
 Don't worry if you get this wrong: you can always change the PR title after sending it.
-Check [previously merged PRs](https://github.com/JoshuaKGmichaelfaitholdberg/eslint-fix-utils/pulls?q=is%3Apr+is%3Amerged+-label%3Adependencies+) for reference.
+Check [previously merged PRs](https://github.com/michaelfaith/eslint-fix-utils/pulls?q=is%3Apr+is%3Amerged+-label%3Adependencies+) for reference.
 
 #### Draft PRs
 
