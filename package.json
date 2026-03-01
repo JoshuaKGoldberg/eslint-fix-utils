@@ -1,6 +1,6 @@
 {
 	"name": "eslint-fix-utils",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"description": "Utilities for ESLint rule fixers and suggestions. 🧑‍🔧",
 	"repository": {
 		"type": "git",
